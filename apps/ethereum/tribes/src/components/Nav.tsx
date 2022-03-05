@@ -30,17 +30,17 @@ const Nav = () => {
 	return (
 		<nav>
 			<Link href="/" passHref>
-				<a className={styles.logo}>T</a>
+				<a> <img className="navPhoto"  width={40} src="/pngegg.png" alt="Flowers in Chania" /></a>
 			</Link>
 			<div className={styles.rightNav}>
-				<Link href="/battle">
-                    Battle
+				<Link href="/lotto">
+                    LOTTO!
 				</Link>
-				<Link href="https://docs.hyperverse.dev/" passHref>
+				{/* <Link href="https://docs.hyperverse.dev/" passHref>
 					<a target="_blank" rel="noreferrer">
 						About
 					</a>
-				</Link>
+				</Link> */}
 
 				{!address ? (
 					<button className={styles.connect} onClick={connect}>

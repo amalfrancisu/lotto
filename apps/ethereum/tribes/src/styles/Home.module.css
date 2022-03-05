@@ -5,26 +5,39 @@
   font-size: 2.5rem;
 }
 
+.yourCard{
+  margin: auto;
+  width: 50%;
+  border: 3px solid green;
+  padding: 10px;
+}
+
 .rightNav {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: "Press Start 2P";
+  font-family: "Lucida Console";
+  font-weight: bold;
+  
 }
 
 .rightNav a {
   margin-left: 1rem;
+  border: 3px solid green;
+  font-size: x-large;
+  background-color: rgb(0, 255, 13);
+  /* width: 50%; */
 }
 
 .connect {
-  font-family: 'Press Start 2P';
+  font-family: 'Lucida Console';
   cursor: pointer;
   text-transform: uppercase;
-  font-size: 0.7rem;
+  font-size: 0.9rem;
   color: var(--color-theme-white);
   width: 12.5rem;
   height: 2.5rem;
-  background-color: blue;
+  background-color: rgb(0, 255, 13);
   margin-left: 1.5rem;
 }
 
@@ -39,14 +52,14 @@
 }
 
 .logout {
-  font-family: 'Press Start 2P';
+  font-family: 'Lucida Console';
   cursor: pointer;
   text-transform: uppercase;
   font-size: 0.7rem;
   color: var(--color-theme-white);
   width: 12.5rem;
   height: 2.2rem;
-  background-color: blue;
+  background-color: rgb(255, 0, 0);
   margin-left: 1.5rem;
 }
 
@@ -82,8 +95,14 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  height: calc(100vh - 8rem);
-  font-family: "Press Start 2P";
+  /* height: calc(100vh - 8rem); */
+  height : 105%;
+  font-family: "Lucida Console";
+}
+
+.navPhoto {
+  height: 5%;
+  /* width: 10px;  */
 }
 
 .header {
@@ -97,7 +116,7 @@
 }
 
 .join {
-  font-family: 'Press Start 2P';
+  font-family: 'Lucida Console';
   cursor: pointer;
   margin-top: 1rem;
   text-transform: uppercase;
@@ -115,10 +134,10 @@
 }
 
 .about {
-  margin-top: 1.5rem;
+  margin-top: 0.4rem;
   color: var(--color-theme-red);
-  font-size: 1.1rem;
-  font-family: 'Inconsolata', monospace;
+  font-size: 1rem;
+  font-family: 'Inconsolata', Lucida Console;
   text-transform: none;
   letter-spacing: 2px;
   width: 60%;
@@ -129,7 +148,7 @@
   margin-top: 1.5rem;
   color: var(--color-theme-red);
   font-size: 0.9rem;
-  font-family: 'Inconsolata', monospace;
+  font-family: 'Inconsolata', Lucida Console;
   text-transform: none;
   letter-spacing: 2px;
 }
@@ -149,7 +168,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-family: "Press Start 2P";
+  font-family: "Lucida Console";
 }
 
 .container > h1 {
@@ -222,7 +241,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-family: "Press Start 2P";
+  font-family: "Lucida Console";
 }
 
 .container3 {
@@ -232,7 +251,7 @@
   align-items: center;
   width: 90%;
   height: 100%;
-  font-family: "Press Start 2P";
+  font-family: "Lucida Console";
 }
 
 .tribe {
@@ -327,7 +346,7 @@
 }
 
 .switch {
-  font-family: 'Press Start 2P';
+  font-family: 'Lucida Console';
   cursor: pointer;
   text-transform: uppercase;
   font-size: 0.5rem;
@@ -451,12 +470,12 @@
     justify-content: center;
     align-items: center;
     height: calc(100vh - 8rem);
-    font-family: "Press Start 2P";
+    font-family: "Lucida Console";
 
 }
 
 .battleBtn {
-  font-family: 'Press Start 2P';
+  font-family: 'Lucida Console';
   cursor: pointer;
   margin: -3rem auto 3rem;
   text-transform: uppercase;

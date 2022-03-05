@@ -7,15 +7,31 @@ import Nav from '../components/Nav';
 import { useTribes } from '@decentology/hyperverse-ethereum-tribes';
 import { useEthereum } from '@decentology/hyperverse-ethereum';
 import { toast } from 'react-toastify';
+import Loader from '../components/Loader';
 import { useHyperverse } from '@decentology/hyperverse';
+import { useStorage } from '@decentology/hyperverse-storage-skynet';
+import Image from 'next/image';
+
 
 const Home: NextPage = () => {
 	const router = useRouter();
 	const { blockchain } = useHyperverse();
 	const { address } = useEthereum();
-	const { TribeId } = useTribes();
-	const { data, error } = TribeId();
+	const { Tribe, Leave } = useTribes();
+	const { data, isLoading: tribeDataLoading, error } = Tribe();
 	console.log('Blockchian:', blockchain);
+	const { clientUrl } = useStorage();
+
+	const {
+		mutate,
+		isLoading: leaveTribeLoading,
+		error: leaveErr,
+	} = Leave({
+		onSuccess: () => router.push('/'),
+	});
+
+	const isLoading = tribeDataLoading
+
 	useEffect(() => {
 		if (error) {
 			if (error instanceof Error) {
@@ -28,22 +44,20 @@ const Home: NextPage = () => {
 	return (
 		<>
 			<Head>
-				<title>Tribes Sample Project</title>
+				<title>Casino Royale</title>
 				<meta
 					name="description"
-					content="Sample project utilizing tribes module from hyperverse"
+					content="A Casino Royale game based on the tribes module"
 				/>
 			</Head>
 
 			<main>
 				<Nav />
-				<div className={styles.hero}>
+				<div className={styles.hero} >
 					<div className={styles.header}>
-						<h1> Tribes</h1>
+						<h2> Casino Royale</h2>
 						<p className={styles.about}>
-							An example dapp utilizing the tribes module built on the hyperverse.
-							Tribes allows you to build communities that people can join, leave, or
-							create.
+							Choose your card and get ready to win exciting prizes.
 						</p>
 						{address ? (
 							!data ? (
@@ -53,20 +67,78 @@ const Home: NextPage = () => {
 										router.push('/all-tribes');
 									}}
 								>
-									Join A Tribe
+									Choose a Card
 								</button>
 							) : (
 								<button
 									className={styles.join}
 									onClick={() => router.push('/my-tribe')}
 								>
-									View Your Tribe
+									Change Your Card
 								</button>
 							)
 						) : null}
 					</div>
+
+
+
+
+					<div className='yourCard'>
+					{isLoading ? (
+						<Loader loaderMessage="Processing..." />
+					) : address && data ? (
+						<div className='yourCard'>
+						{/* <div className={styles.container3}> */}
+							{data.image === 'N/A' ? (
+								<div >
+									<h2>{data.name}</h2>
+								</div>
+							) : (
+								<div >
+									<br>
+									</br>
+									<h2>Your Card</h2>
+								<Image
+									width={200}
+									height={300}
+									src={`${clientUrl}/${data.image}/`}
+									alt={data.name}
+									
+								/>
+
+<div >
+								<h3>{data.name}</h3>
+								<p >{data.description}</p>
+							</div>
+
+								</div>
+
+								
+								
+							)}
+	
+							<div >
+								<h3>{data.name}</h3>
+								<p >{data.description}</p>
+							</div>
+						{/* </div> */}
+						{/* <button className={styles.join} onClick={() => mutate()}>
+							Leave Tribe
+						</button> */}
+					</div>
+
+					) : (
+						<div>hello</div>
+					)
+					}
+				</div>
+
 				</div>
 				{/* <Footer /> */}
+
+
+
+				
 			</main>
 		</>
 	);

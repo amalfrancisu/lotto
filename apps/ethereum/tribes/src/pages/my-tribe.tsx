@@ -64,7 +64,7 @@ const TribesPage = () => {
 						</div>
 					</div>
 					<button className={styles.join} onClick={() => mutate()}>
-						Leave Tribe
+						Change Card
 					</button>
 				</div>
 			) : (
@@ -72,7 +72,7 @@ const TribesPage = () => {
 				!tribeErr && (
 					<div className={styles.container2}>
 						<button className={styles.join} onClick={() => router.push('/all-tribes')}>
-							Join a Tribe
+							Choose a card
 						</button>
 					</div>
 				)
