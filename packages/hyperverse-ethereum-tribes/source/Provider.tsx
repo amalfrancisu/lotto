@@ -8,7 +8,7 @@ const client = new QueryClient();
 
 export const ContractABI = ABI.abi;
 export const CONTRACT_TESTNET_ADDRESS = '0xf8CEc073d08e42cdDC1bF1fd8d44ce3252ab7352';
-export const TENANT_TESTNET_ADDRESS = '0xD847C7408c48b6b6720CCa75eB30a93acbF5163D';
+export const TENANT_TESTNET_ADDRESS = '0x55C0b00aF5CdA1cB53d10aEc1cD24679F447fdfc';
 
 const Provider: FC<HyperverseModuleInstance> = ({ children, tenantId }) => {
 	const { network } = useHyperverse();
